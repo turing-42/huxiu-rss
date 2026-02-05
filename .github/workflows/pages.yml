@@ -34,11 +34,10 @@ jobs:
       - name: Prepare Pages artifact
         run: |
           rm -rf dist
-          mkdir -p dist/rss
+          mkdir -p dist
           cp -f rss.xml dist/rss.xml
           cp -f index.html dist/index.html
           cp -f .nojekyll dist/.nojekyll
-          cp -f rss/index.html dist/rss/index.html
 
       - uses: actions/configure-pages@v5
 
