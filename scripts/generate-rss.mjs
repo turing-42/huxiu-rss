@@ -177,7 +177,7 @@ async function generateRss() {
 
 async function main() {
   const outPathArg = process.argv.find((v) => v.startsWith("--out="))?.slice("--out=".length);
-  const outPath = outPathArg || "public/rss.xml";
+  const outPath = outPathArg || "rss.xml";
 
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
@@ -194,4 +194,3 @@ main().catch((err) => {
   console.error(err?.stack || err?.message || String(err));
   process.exitCode = 1;
 });
-

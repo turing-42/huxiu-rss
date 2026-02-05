@@ -31,14 +31,20 @@ jobs:
       - name: Generate rss.xml
         run: npm run generate
 
-      - name: Disable Jekyll
-        run: : > public/.nojekyll
+      - name: Prepare Pages artifact
+        run: |
+          rm -rf dist
+          mkdir -p dist/rss
+          cp -f rss.xml dist/rss.xml
+          cp -f index.html dist/index.html
+          cp -f .nojekyll dist/.nojekyll
+          cp -f rss/index.html dist/rss/index.html
 
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          path: dist
 
   deploy:
     needs: build
