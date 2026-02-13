@@ -1,0 +1,9 @@
+{
+  "name": "huxiu-rss",
+  "version": "1.0.0",
+  "description": "Huxiu RSS generator",
+  "scripts": {
+    "generate": "node scripts/generate-rss.mjs",
+    "build": "npm run generate"
+  }
+}
